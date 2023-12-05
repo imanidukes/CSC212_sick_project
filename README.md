@@ -9,6 +9,8 @@ The convex hull of a set of points is the smallest convex shape enclosing all th
 
 ### Graham's Scan Algorithm
 
+To start with brief history on this topic, the Graham's Scan Algorithm was created, published, and named after Ronald Graham in 1972, which is fairly recent, uses a stack to detect and remove points that are not of use in the boundary efficiently. 
+
 1. Given a set of points, sort through and find the lowest Y coordinate value. If there are multiple, use the lowest X value among them. This one point will be the anchor point.
 
 2. Sort the remaing points by the angle they form with the anchor point going from smallest to largest starting with the anchor point. If two angles are the same, put the smallest distance from the anchor point first.
@@ -25,11 +27,11 @@ The convex hull of a set of points is the smallest convex shape enclosing all th
 
 At the conclusion of this project, we will have working code that can find the convex hull of a set of points and store them into a vector. Using this vector, we can implement different functions that provide real world scenarios to display the uses of a convex hull. Main implemenetations are collision detection, image processing and shape detection.
 
-### How to run the code
+### How to Run Code
 
 To run the main.cpp and convexHull.cpp to test out preset inputs, our code takes a text file with a list of points as an input. Each point should be on its own line, sepereating the x and y coordinate by a space. This text file is the data that will be used to calcualte the convex hull. The name of the text file should be in the CLA so it can be accessed. A dotFile will be created, allowing for it be visualized using a compiler such as GraphViz Online. If running the code multiple times, please delete any data in the DOT file or there will be errors. mainex1.cpp has the main function to run this code.
 
-## Testing with 2 input Files
+## Testing With 2 Input Files
 
 If you would like to have 2 different input files given, the DOT file produced will include both convex hulls seperate. This can be used as a collision detection, showing if the two convex hulls intersect. To do so, inlcude both text file names in the CLA and adjust the main according by calling "std::vector<Point> data2 = hullObj.createConvexHull(argc[2]);" again, accessing the second CLA. mainex2.cpp has the main function to run this code.
 
